@@ -29,29 +29,16 @@ import OverlayLoader from "./components/Loader";
 - `loadingText` (node)
   - default: `undefined` - the text to render in the loader overlay when active.
 
-## Custom Spinner :recycle:
-
-Adding a custom spinner is super easy, here's an example:
-
-Acquire the spinner you want to use. Doesn't matter where you get it, as long as you're rendering a valid React node. It can be a custom svg in your codebase if you want. For this example let's use [`react-spinners`](https://www.npmjs.com/package/react-spinners). 
-
-```
-npm install react-spinners
-```
-
-Then simply provide it to the spinner prop for your loader.
+## Custom Loader:
+Custom loader can be used in form of GIF and React Elements as well.
 
 ```javascript
-import LoadingOverlay from 'react-loading-overlay'
-import BounceLoader from 'react-spinners/BounceLoader'
+import OverlayLoader from "./components/Loader";
 
-export default function MyLoader({ active, children }) {
+const App = () => {
   return (
-    <LoadingOverlay
-      active={active}
-      spinner={<BounceLoader />}
-    >
-      {children}
-    </LoadingOverlay>
-  )
+    <OverlayLoader>
+        <CustomLoader />  // Your Loader
+    </OverlayLoader>
+  );
 }
