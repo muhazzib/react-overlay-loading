@@ -2,7 +2,7 @@ import OverlayLoader from "./components/Loader";
 
 function App() {
   return (
-    <OverlayLoader loadingText='Loading...' />
+    <OverlayLoader loadingText='Loading...' active />
   );
 }
 

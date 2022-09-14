@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# React-Overlay-Loading
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Demo
+![](https://github.com/muhazzib/react-overlay-loading/blob/main/src/demo/demo.gif?raw=true)
 
-In the project directory, you can run:
 
-### `npm start`
+## Quick start:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```javascript
+import OverlayLoader from "./components/Loader";
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<OverlayLoader loadingText='Loading...' active />
 
-### `npm test`
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Props:
 
-### `npm run build`
+- `active` (boolean)
+  - default: `true`
+- `onClick` (function)
+  - default: `undefined` - click handler for the overlay when active.
+- `overlayContainerStyle` (object)
+  - default: `{}` - inline styling for overlay main container.
+- `contentContainerStyle` (object)
+  - default: `{}` - inline styling for content container.
+- `loadingTextStyle` (object)
+  - default: `{}` - inline styling for loading text if provided.
+- `loadingText` (node)
+  - default: `undefined` - the text to render in the loader overlay when active.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Custom Spinner :recycle:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Adding a custom spinner is super easy, here's an example:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Acquire the spinner you want to use. Doesn't matter where you get it, as long as you're rendering a valid React node. It can be a custom svg in your codebase if you want. For this example let's use [`react-spinners`](https://www.npmjs.com/package/react-spinners). 
 
-### `npm run eject`
+```
+npm install react-spinners
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Then simply provide it to the spinner prop for your loader.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```javascript
+import LoadingOverlay from 'react-loading-overlay'
+import BounceLoader from 'react-spinners/BounceLoader'
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default function MyLoader({ active, children }) {
+  return (
+    <LoadingOverlay
+      active={active}
+      spinner={<BounceLoader />}
+    >
+      {children}
+    </LoadingOverlay>
+  )
+}

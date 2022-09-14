@@ -1,11 +1,12 @@
 import './Loader.css';
 
-const OverlayLoader = ({ overlayContainerStyle = {}, overlayContentStyle = {}, loadingTextStyle = {}, loadingText, children }) => {
-    return (
-        <div class="overlay_container" style={overlayContainerStyle}>
-            <div class="overlay_content" style={overlayContentStyle}>
+const OverlayLoader = (props) => {
+    const { active = true, onClick, overlayContainerStyle = {}, contentContainerStyle = {}, loadingTextStyle = {}, loadingText, children } = props;
+    return active ? (
+        <div class="overlay_container" style={overlayContainerStyle} onClick={onClick}>
+            <div class="overlay_content" style={contentContainerStyle}>
                 {
-                    children || <img className='default_loader' src={require('../assets/spinner.gif')} alt='spinner' />
+                    children || <img className='default_loader' src={require('../assets/spinner.gif')} alt='loader' />
                 }
                 {
                     loadingText && (
@@ -14,7 +15,7 @@ const OverlayLoader = ({ overlayContainerStyle = {}, overlayContentStyle = {}, l
                 }
             </div>
         </div>
-    );
+    ) : null;
 }
 
 export default OverlayLoader;
