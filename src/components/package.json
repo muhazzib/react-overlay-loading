@@ -6,8 +6,14 @@
   "scripts": {
     "build": "webpack"
   },
-  "author": "muhazzib",
-  "repository": "https://github.com/muhazzib/react-overlay-loading",
+  "author": {
+    "name": "Muhazzib Uddin Farooqui",
+    "email": "muhazzib7@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muhazzib/react-overlay-loading/tree/main/src/components"
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.5",
