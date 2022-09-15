@@ -1,6 +1,6 @@
 {
   "name": "overlay-loading-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Overlay Loading React",
   "main": "./build/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "author": "muhazzib",
   "repository": "https://github.com/muhazzib/react-overlay-loading",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",

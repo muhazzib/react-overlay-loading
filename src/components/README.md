@@ -10,7 +10,7 @@
 ## Quick start:
 
 ```javascript
-import OverlayLoader from "./components/Loader";
+import OverlayLoader from "overlay-loading-react";
 
 <OverlayLoader loadingText='Loading...' active />
 
