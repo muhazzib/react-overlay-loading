@@ -1,6 +1,6 @@
 {
   "name": "overlay-loading-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Overlay Loading React",
   "main": "./build/index.js",
   "scripts": {

@@ -29,7 +29,7 @@ import OverlayLoader from "./components/Loader";
 const App = () => {
   return (
     <OverlayLoader>
-        <CustomLoader />  // Your Loader
+        <MyComponent />  // Your Loader
     </OverlayLoader>
   );
 }
