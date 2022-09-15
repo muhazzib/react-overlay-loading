@@ -1,12 +1,25 @@
 import './Loader.css';
 
 const OverlayLoader = (props) => {
-    const { active = true, onClick, overlayContainerStyle = {}, contentContainerStyle = {}, loadingTextStyle = {}, loadingText, children } = props;
+
+
+    const { active = true, variant = "spinner", onClick, overlayContainerStyle = {}, contentContainerStyle = {}, loadingTextStyle = {}, loadingText, children } = props;
+    const loaders = {
+        'spinner': <div className={variant} />,
+        'wheel': <div className={variant} />,
+        'facebook': <div className="facebook"><div /><div /><div /></div>,
+        'circle': <div className="circle"><div/></div>,
+        'ripple': <div className="ripple"><div/><div/></div>,
+        'ring': <div className="ring"></div>
+    };
+
+    const libraryLoaders = () => loaders[variant] ? loaders[variant] : loaders['wheel'];
+
     return active ? (
-        <div class="overlay_container" style={overlayContainerStyle} onClick={onClick}>
-            <div class="overlay_content" style={contentContainerStyle}>
+        <div className="overlay_container" style={overlayContainerStyle} onClick={onClick}>
+            <div className="overlay_content" style={contentContainerStyle}>
                 {
-                    children || <img className='default_loader' src={require('../assets/spinner.gif')} alt='loader' />
+                    children || libraryLoaders()
                 }
                 {
                     loadingText && (
