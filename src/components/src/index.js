@@ -1,4 +1,5 @@
-import './Loader.css';
+import React from 'react';
+import './index.css';
 
 const OverlayLoader = (props) => {
     const { active = true, variant = "spinner", onClick, overlayContainerStyle = {}, contentContainerStyle = {}, loadingTextStyle = {}, loadingText, children } = props;
