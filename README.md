@@ -1,10 +1,12 @@
 # React-Overlay-Loading
 
 
-## Demo
-![](https://github.com/muhazzib/react-overlay-loading/blob/main/src/demo/demo.gif?raw=true)
+## Installation
 
-
+```bash
+  npm install react-overlay-loading
+```
+    
 ## Quick start:
 
 ```javascript
@@ -26,8 +28,16 @@ import OverlayLoader from "./components/Loader";
   - default: `{}` - inline styling for content container.
 - `loadingTextStyle` (object)
   - default: `{}` - inline styling for loading text if provided.
-- `loadingText` (node)
+- `loadingText` (string)
   - default: `undefined` - the text to render in the loader overlay when active.
+- `variant` (string)
+  - default: `spinner` - The type of loading to show.
+
+
+## Variants
+
+![](https://github.com/muhazzib/react-overlay-loading/blob/main/src/demo/demo.gif?raw=true)
+
 
 ## Custom Loader:
 Custom loader can be used in form of GIF and React Elements as well.
@@ -42,3 +52,12 @@ const App = () => {
     </OverlayLoader>
   );
 }
+```
+
+## Authors
+- [@muhazzib](https://github.com/muhazzib)
+
+
+## 🔗 Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhazzib-07/)
+
